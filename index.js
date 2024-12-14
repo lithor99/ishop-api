@@ -14,6 +14,8 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
+require("./src/routes/user.routes")(app);
+
 const sequelize = require("./src/config/db");
 
 app.listen(port, () => {
