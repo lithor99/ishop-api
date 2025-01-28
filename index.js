@@ -14,7 +14,13 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
+// use upload file routes
+const upload = require("./src/routes/upload.file.routes");
+app.use(upload);
+
 require("./src/routes/user.routes")(app);
+require("./src/routes/category.routes")(app);
+require("./src/routes/product.routes")(app);
 
 const sequelize = require("./src/config/db");
 
